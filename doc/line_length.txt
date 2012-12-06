@@ -1,0 +1,16 @@
+*line_length.txt*       Highlight lines that are too long             2012-12-05
+==============================================================================
+
+Add a mapping to toggle highlighting of long lines:
+
+    nmap R :LineLength<CR>
+
+The max. line length can be set in a modeline in a comment within 
+one of the 5 last lines of a file:
+
+    // ...
+    // Lines longer than 80 characters will get a blue background
+    // ll: 80 blue
+
+==============================================================================
+vim:tw=78:ft=help
