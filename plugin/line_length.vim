@@ -17,11 +17,11 @@ if ! exists("g:LineLength_LineLength")
 endif
 
 if ! exists("g:LineLength_guibg")
-    let g:LineLength_guibg = 'grey80'
+    let g:LineLength_guibg = 'red'
 endif
 
 if ! exists("g:LineLength_ctermbg")
-    let g:LineLength_ctermbg = 2
+    let g:LineLength_ctermbg = 1
 endif
 
 if ! exists("g:LineLength_active")
@@ -64,17 +64,17 @@ fun! <SID>LineLengthReadModeLine()
        endif
        if length > 1 && len(modeline[1]) > 0
            let b:LineLength_LineLength = modeline[1]
-           if g:LineLength_active
-               call <SID>LineLengthOn()
-           else
-               hi clear LineLength
-           endif
-           return
+           break
        endif
     endfor
+    if g:LineLength_active
+        call <SID>LineLengthOn()
+    else
+        hi clear LineLength
+    endif
 endfun
 
 au BufEnter * call <SID>LineLengthReadModeLine()
 com! -nargs=* LineLength call <SID>LineLengthToggle()
 let &cpoptions = s:savedCpo
-" ll: 42 yellow
+" ll: 42 red
