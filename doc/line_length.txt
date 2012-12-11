@@ -12,5 +12,11 @@ one of the 5 last lines of a file:
     // Lines longer than 80 characters will get a blue background
     // ll: 80 blue
 
+Customize defaults:
+
+    let g:LineLength_LineLength = 80
+    let g:LineLength_guibg = 'red'
+    let g:LineLength_ctermbg = 1
+
 ==============================================================================
 vim:tw=78:ft=help
